@@ -9,11 +9,14 @@ def proceed():
 
 
 def multiple_choices_checker(x):
-    if x == "a" or x == "b" or x == "c":
+    if x.lower() == "a" or x.lower() == "b" or x == "c":
         return True
 
-# def yes_no_checker(x):
-#     if x == "y" or x == "n"
+
+def yes_no_checker(x):
+    if x.lower() == "y" or x.lower() == "n":
+        return True
+
 
 if proceed():
     print("Ok, then let's create your profile first: ")
@@ -35,15 +38,18 @@ if proceed():
         if not is_true:
             print("Please choose from A,B or C : ")
 
+    is_true = False
+    while not is_true:
+        user_issue = input(
+            "Why do you want to complain?\n"
+            "A- unfairly graded\n"
+            "B-Offensive comment\n"
+            "C- Others\n"
+        )
+        is_true = multiple_choices_checker(user_issue)
+        if not is_true:
+            print("Please choose from A,B or C : ")
 
-    user_issue = input(
-        "Why do you want to complain?\n"
-        "A- unfairly graded\n"
-        "B-Offensive comment\n"
-        "C- Others\n"
-    )
-    user_issue = multiple_choices_checker(user_issue)
-    print(user_issue)
     if user_issue.lower() == "c":
         user_issue = input("Would you please address what your complaint is?\n")
     elif user_issue.lower() == "b":
@@ -57,5 +63,6 @@ if proceed():
             print(
                 "It will be much better if you got the link. So your instructor will take action for this student. "
             )
+
 else:
     print("You did not want to proceed")

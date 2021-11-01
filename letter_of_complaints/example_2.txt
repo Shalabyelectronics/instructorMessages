@@ -1,10 +1,10 @@
 Hello instructor [instructor_name],
 
-My [part] for [unit] was [issue]. I received poor grades from [number] peer[plural] with no feedback[plural]
-to at least explain their gradings.
+I'm currently doing [course_name].
+My [type of assignment section] for unit [unit number] was [Issue details].
 
 I kindly request you check this case out.
 
 Best regards.
-[student name]
+[student  First and last nam]
 Group number : [group number]

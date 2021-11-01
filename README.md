@@ -16,7 +16,9 @@ Example:
 ```
 Hello instructor [instructor_name],
 
+I'm currently doing [course_name].
 My [type of assignment section] for unit [unit number] was [Issue details].
+
 I kindly request you check this case out.
 
 Best regards.
