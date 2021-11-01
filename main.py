@@ -11,9 +11,9 @@ def proceed():
 def multiple_choices_checker(x):
     if x == "a" or x == "b" or x == "c":
         return True
-    else:
-        x = input("Please just choose from A, B or C.")
 
+# def yes_no_checker(x):
+#     if x == "y" or x == "n"
 
 if proceed():
     print("Ok, then let's create your profile first: ")
@@ -23,20 +23,27 @@ if proceed():
     # TODO 1 we are going to build a dictionary that holds of courses name and their own code.
     # So I can be sure what the user specific course he is doing.
     user_instructor_name = input("What is your instructor name : ")
-    user_complaint_part = input(
-        "Which part do you want to complain about it?\n"
-        "A- Discussion forum\n"
-        "B- Written Assignment\n"
-        "C- Learning Journal\n"
-    )
-    multiple_choices_checker(user_complaint_part)
+    is_true = False
+    while not is_true:
+        user_complaint_part = input(
+            "Which part do you want to complain about it?\n"
+            "A- Discussion forum\n"
+            "B- Written Assignment\n"
+            "C- Learning Journal\n"
+        )
+        is_true = multiple_choices_checker(user_complaint_part)
+        if not is_true:
+            print("Please choose from A,B or C : ")
+
+
     user_issue = input(
         "Why do you want to complain?\n"
         "A- unfairly graded\n"
         "B-Offensive comment\n"
         "C- Others\n"
     )
-    multiple_choices_checker(user_issue)
+    user_issue = multiple_choices_checker(user_issue)
+    print(user_issue)
     if user_issue.lower() == "c":
         user_issue = input("Would you please address what your complaint is?\n")
     elif user_issue.lower() == "b":
