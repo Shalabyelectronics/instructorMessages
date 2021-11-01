@@ -8,23 +8,28 @@ if user_input.lower() == "yes" or user_input.lower() == "y":
     # TODO 1 we are going to build a dictionary that holds of courses name and their own code.
     # So I can be sure what the user specific course he is doing.
     user_instructor_name = input("What is your instructor name : ")
-    user_complaint_part = input("Which part do you want to complain about it?\n"
-                                "A- Discussion forum\n"
-                                "B- Written Assignment\n"
-                                "C- Learning Journal\n")
-    user_issue = input("Why do you want to complain?\n"
-                       "A- unfairly graded\n"
-                       "B-Offensive comment\n"
-                       "C- Others\n")
+    user_complaint_part = input(
+        "Which part do you want to complain about it?\n"
+        "A- Discussion forum\n"
+        "B- Written Assignment\n"
+        "C- Learning Journal\n"
+    )
+    user_issue = input(
+        "Why do you want to complain?\n"
+        "A- unfairly graded\n"
+        "B-Offensive comment\n"
+        "C- Others\n"
+    )
     if user_issue.lower() == "c":
         user_issue = input("Would you please address what your complaint is?\n")
     elif user_issue.lower() == "b":
         user_issue = input("Who is the student who gives you that offensive comment? ")
-        user_issue_link = input("Can you provide the link where the offensive comment is located? ")
+        user_issue_link = input(
+            "Can you provide the link where the offensive comment is located? "
+        )
         if user_issue_link.lower() == "yes" or user_issue_link.lower() == "y":
             user_issue_link = input("Please paste the link here : ")
         else:
-            print("It will be much better if you got the link. So your instructor will take action for this student. ")
-
-
-
+            print(
+                "It will be much better if you got the link. So your instructor will take action for this student. "
+            )
