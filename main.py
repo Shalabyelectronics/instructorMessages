@@ -1,6 +1,5 @@
 print("Welcome to complaint center.\n\n")
-user_input = input("Do you want to create a complaint letter to your instructor?")
-if user_input.lower() == "yes" or user_input.lower() == "y":
+if proceed():
     print("Ok, then let's create your profile first: ")
     user_name = input("Write your first and last name, please : ")
     user_course = input("Which course are you currently doing? ")
@@ -33,3 +32,12 @@ if user_input.lower() == "yes" or user_input.lower() == "y":
             print(
                 "It will be much better if you got the link. So your instructor will take action for this student. "
             )
+else:
+    print("You did not want to proceed")
+
+
+def proceed():
+    user_input = input("Do you want to create a complaint letter to your instructor?")
+    if user_input.lower() == "yes" or user_input.lower() == "y":
+        return True
+    return False
