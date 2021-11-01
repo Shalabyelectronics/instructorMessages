@@ -1,4 +1,20 @@
-print("Welcome to complaint center.\n\n")
+print("Welcome to complaint center.\n")
+
+
+def proceed():
+    user_input = input("Do you want to create a complaint letter to your instructor?")
+    if user_input.lower() == "yes" or user_input.lower() == "y":
+        return True
+    return False
+
+
+def multiple_choices_checker(x):
+    if x == "a" or x == "b" or x == "c":
+        return True
+    else:
+        x = input("Please just choose from A, B or C.")
+
+
 if proceed():
     print("Ok, then let's create your profile first: ")
     user_name = input("Write your first and last name, please : ")
@@ -13,12 +29,14 @@ if proceed():
         "B- Written Assignment\n"
         "C- Learning Journal\n"
     )
+    multiple_choices_checker(user_complaint_part)
     user_issue = input(
         "Why do you want to complain?\n"
         "A- unfairly graded\n"
         "B-Offensive comment\n"
         "C- Others\n"
     )
+    multiple_choices_checker(user_issue)
     if user_issue.lower() == "c":
         user_issue = input("Would you please address what your complaint is?\n")
     elif user_issue.lower() == "b":
@@ -34,10 +52,3 @@ if proceed():
             )
 else:
     print("You did not want to proceed")
-
-
-def proceed():
-    user_input = input("Do you want to create a complaint letter to your instructor?")
-    if user_input.lower() == "yes" or user_input.lower() == "y":
-        return True
-    return False
