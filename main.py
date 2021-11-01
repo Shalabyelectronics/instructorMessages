@@ -16,5 +16,15 @@ if user_input.lower() == "yes" or user_input.lower() == "y":
                        "A- unfairly graded\n"
                        "B-Offensive comment\n"
                        "C- Others\n")
+    if user_issue.lower() == "c":
+        user_issue = input("Would you please address what your complaint is?\n")
+    elif user_issue.lower() == "b":
+        user_issue = input("Who is the student who gives you that offensive comment? ")
+        user_issue_link = input("Can you provide the link where the offensive comment is located? ")
+        if user_issue_link.lower() == "yes" or user_issue_link.lower() == "y":
+            user_issue_link = input("Please paste the link here : ")
+        else:
+            print("It will be much better if you got the link. So your instructor will take action for this student. ")
+
 
 

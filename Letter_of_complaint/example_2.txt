@@ -1,6 +1,6 @@
 Hello instructor [instructor_name],
 
-My [part] for [unit] was unfairly graded. I received poor grades from [number] peer[plural] with no feedback[plural]
+My [part] for [unit] was [issue]. I received poor grades from [number] peer[plural] with no feedback[plural]
 to at least explain their gradings.
 
 I kindly request you check this case out.
