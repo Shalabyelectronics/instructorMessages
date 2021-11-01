@@ -2,8 +2,8 @@ ASSIGNMENTS_SECTION = {
     "a": "Discussion forum",
     "b": "Written Assignment",
     "c": "Learning Journal"
-                       }
-USER_ISSUE = {
+}
+USER_ISSUES = {
     "a": "unfairly graded",
     "b": "Offensive comment",
     "c": "Others"
@@ -60,7 +60,7 @@ if proceed():
             "B-Offensive comment\n"
             "C- Others\n"
         )
-        is_true = multiple_choices_checker(user_issue, )
+        is_true = multiple_choices_checker(user_issue, USER_ISSUES)
         if not is_true:
             print("Please choose from A,B or C : ")
         else:
@@ -81,12 +81,14 @@ if proceed():
             elif user_issue.lower() == "a":
                 user_issue_more_details = input("Would you please give more details why you think you unfairly "
                                                 "graded?\n")
-        print(user_instructor_name)
-        print(user_full_name)
-        print(user_course)
-        print("user_unit" + str(user_unit))
-        print(user_complaint_part)
-        print(user_issue)
+        print(f"user_instructor_name : {user_instructor_name}")
+        print(f"user_full_name : {user_full_name}")
+        print(f"user_course : {user_course}")
+        print(f"Group number : {user_group_number}")
+        print("user_unit" + " " + str(user_unit))
+        print(f"ASSIGNMENTS_SECTION {ASSIGNMENTS_SECTION[user_complaint_part]}")
+        print(f"USER_ISSUE : {USER_ISSUES[user_issue]}")
+        print(f"user_issue_more_details {user_issue_more_details}")
 
 else:
     print("You did not want to proceed")
