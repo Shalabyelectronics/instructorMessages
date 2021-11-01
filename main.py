@@ -1,3 +1,14 @@
+ASSIGNMENTS_SECTION = {
+    "a": "Discussion forum",
+    "b": "Written Assignment",
+    "c": "Learning Journal"
+                       }
+USER_ISSUE = {
+    "a": "unfairly graded",
+    "b": "Offensive comment",
+    "c": "Others"
+}
+
 print("Welcome to complaint center.\n")
 
 
@@ -8,9 +19,10 @@ def proceed():
     return False
 
 
-def multiple_choices_checker(x):
+def multiple_choices_checker(x, question):
     if x.lower() == "a" or x.lower() == "b" or x == "c":
-        return True
+        question = question[x]
+        return question
 
 
 def yes_no_checker(x):
@@ -36,7 +48,7 @@ if proceed():
             "B- Written Assignment\n"
             "C- Learning Journal\n"
         )
-        is_true = multiple_choices_checker(user_complaint_part)
+        is_true = multiple_choices_checker(x=user_complaint_part, question=ASSIGNMENTS_SECTION)
         if not is_true:
             print("Please choose from A,B or C : ")
 
@@ -48,7 +60,7 @@ if proceed():
             "B-Offensive comment\n"
             "C- Others\n"
         )
-        is_true = multiple_choices_checker(user_issue)
+        is_true = multiple_choices_checker(user_issue, )
         if not is_true:
             print("Please choose from A,B or C : ")
         else:
