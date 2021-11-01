@@ -20,12 +20,14 @@ def yes_no_checker(x):
 
 if proceed():
     print("Ok, then let's create your profile first: ")
-    user_name = input("Write your first and last name, please : ")
+    user_full_name = input("Write your first and last name, please : ")
     user_course = input("Which course are you currently doing? ")
     user_unit = input("Which unit is your complaint related to it? ")
+    user_instructor_name = input("What is your instructor name : ")
+    user_group_number = input("What is your group number?")
     # TODO 1 we are going to build a dictionary that holds of courses name and their own code.
     # So I can be sure what the user specific course he is doing.
-    user_instructor_name = input("What is your instructor name : ")
+
     is_true = False
     while not is_true:
         user_complaint_part = input(
@@ -49,20 +51,30 @@ if proceed():
         is_true = multiple_choices_checker(user_issue)
         if not is_true:
             print("Please choose from A,B or C : ")
-
-    if user_issue.lower() == "c":
-        user_issue = input("Would you please address what your complaint is?\n")
-    elif user_issue.lower() == "b":
-        user_issue = input("Who is the student who gives you that offensive comment? ")
-        user_issue_link = input(
-            "Can you provide the link where the offensive comment is located? "
-        )
-        if user_issue_link.lower() == "yes" or user_issue_link.lower() == "y":
-            user_issue_link = input("Please paste the link here : ")
         else:
-            print(
-                "It will be much better if you got the link. So your instructor will take action for this student. "
-            )
+            if user_issue.lower() == "c":
+                user_issue = input("Would you please address what your complaint is?\n")
+            elif user_issue.lower() == "b":
+                user_issue = input("Who is the student who gives you that offensive comment? ")
+                user_issue_link = input(
+                    "Can you provide the link where the offensive comment is located? "
+                )
+                if user_issue_link.lower() == "yes" or user_issue_link.lower() == "y":
+                    user_issue_link = input("Please paste the link here : ")
+                else:
+                    print(
+                        "It will be much better if you got the link. So your instructor will take action for this "
+                        "student. "
+                    )
+            elif user_issue.lower() == "a":
+                user_issue_more_details = input("Would you please give more details why you think you unfairly "
+                                                "graded?\n")
+        print(user_instructor_name)
+        print(user_full_name)
+        print(user_course)
+        print("user_unit" + str(user_unit))
+        print(user_complaint_part)
+        print(user_issue)
 
 else:
     print("You did not want to proceed")
