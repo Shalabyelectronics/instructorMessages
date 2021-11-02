@@ -16,7 +16,9 @@ Example:
 ```
 Hello instructor [instructor_name],
 
+I'm currently doing [course_name].
 My [type of assignment section] for unit [unit number] was [Issue details].
+
 I kindly request you check this case out.
 
 Best regards.
@@ -24,6 +26,15 @@ Best regards.
 Group number : [group number]
 ```
 #### This is a simple example provide how the output will look like.
+#### So we have seven variables we are going to change as below:
+* [instructor_name]
+* [course_name]
+* [type of assignment section]
+* [unit number]
+* [Issue details]
+* [student  First and last nam]
+* [group number]
+
 The output file will be a text file type, and it will be located in the student desktop folder.
 
 
