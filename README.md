@@ -26,7 +26,7 @@ Best regards.
 Group number : [group number]
 ```
 #### This is a simple example provide how the output will look like.
-#### So we have seven variables we are going to change as below:
+#### So we have nine variables we are going to change as below:
 * [instructor_name]
 * [course_name]
 * [type of assignment section]
@@ -34,6 +34,8 @@ Group number : [group number]
 * [Issue details]
 * [student  First and last nam]
 * [group number]
+* [user_issue_proof]
+* [user_issue_more_details]
 
 The output file will be a text file type, and it will be located in the student desktop folder.
 

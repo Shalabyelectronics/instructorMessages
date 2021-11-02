@@ -37,9 +37,6 @@ if proceed():
     user_unit = input("Which unit is your complaint related to it? ")
     user_instructor_name = input("What is your instructor name : ")
     user_group_number = input("What is your group number?")
-    # TODO 1 we are going to build a dictionary that holds of courses name and their own code.
-    # So I can be sure what the user specific course he is doing.
-
     is_true = False
     while not is_true:
         user_complaint_part = input(
@@ -68,7 +65,7 @@ if proceed():
                 user_issue = input("Would you please address what your complaint is?\n")
             elif user_issue.lower() == "b":
                 user_issue = input("Who is the student who gives you that offensive comment? ")
-                user_issue_link = input(
+                user_issue_proof = input(
                     "Can you provide the link where the offensive comment is located? "
                 )
                 if user_issue_link.lower() == "yes" or user_issue_link.lower() == "y":
