@@ -1,13 +1,4 @@
-ASSIGNMENTS_SECTION = {
-    "a": "Discussion forum",
-    "b": "Written Assignment",
-    "c": "Learning Journal"
-}
-USER_ISSUES = {
-    "a": "unfairly graded",
-    "b": "Offensive comment",
-    "c": "Others"
-}
+
 
 print("Welcome to complaint center.\n")
 

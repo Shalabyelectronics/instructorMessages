@@ -1,3 +1,14 @@
+ASSIGNMENTS_SECTION = {
+    "a": "Discussion forum",
+    "b": "Written Assignment",
+    "c": "Learning Journal"
+}
+USER_ISSUES = {
+    "a": "unfairly graded",
+    "b": "Offensive comment",
+    "c": "Others"
+}
+
 
 class Complaint():
     def __init__(self):
@@ -18,9 +29,3 @@ class Complaint():
             "B-Offensive comment\n"
             "C- Others\n"
         )
-
-
-
-
-
-
