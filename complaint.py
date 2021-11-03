@@ -10,7 +10,7 @@ USER_ISSUES = {
 }
 
 
-class Complaint():
+class Complaint:
     def __init__(self):
         self.student_name = input("Write your first and last name, please : ").title()
         self.instructor_name = input("What is your instructor name : ").title()
@@ -47,7 +47,7 @@ class Complaint():
         ).lower()
         if issue_point == "a" or issue_point == "b" or issue_point == "c":
             self.issue_details = USER_ISSUES[issue_point]
-            return True
+            self.proof_questions()
         else:
             print("Please choose from A,B or C : ")
             return False
@@ -79,3 +79,4 @@ class Complaint():
             add_proof = input(f"Do you want to add another poof for {self.issue_details} ?").lower()
             if add_proof == "y" or add_proof == "yes":
                 self.proof_one = input(f"What is your proof about {self.issue_details}")
+
