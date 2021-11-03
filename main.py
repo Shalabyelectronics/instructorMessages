@@ -1,15 +1,10 @@
-ASSIGNMENTS_SECTION = {
-    "a": "Discussion forum",
-    "b": "Written Assignment",
-    "c": "Learning Journal",
-}
-USER_ISSUES = {"a": "unfairly graded", "b": "Offensive comment", "c": "Others"}
 
 print("Welcome to complaint center.\n")
 
 
 def proceed():
-    user_input = input("Do you want to create a complaint letter to your instructor?")
+    user_input = input(
+        "Do you want to create a complaint letter to your instructor?")
     if user_input.lower() == "yes" or user_input.lower() == "y":
         return True
     return False
@@ -33,9 +28,6 @@ if proceed():
     user_unit = input("Which unit is your complaint related to it? ")
     user_instructor_name = input("What is your instructor name : ")
     user_group_number = input("What is your group number?")
-    # TODO 1 we are going to build a dictionary that holds of courses name and their own code.
-    # So I can be sure what the user specific course he is doing.
-
     is_true = False
     while not is_true:
         user_complaint_part = input(
@@ -63,12 +55,12 @@ if proceed():
             print("Please choose from A,B or C : ")
         else:
             if user_issue.lower() == "c":
-                user_issue = input("Would you please address what your complaint is?\n")
+                user_issue = input(
+                    "Would you please address what your complaint is?\n")
             elif user_issue.lower() == "b":
                 user_issue = input(
-                    "Who is the student who gives you that offensive comment? "
-                )
-                user_issue_link = input(
+                    "Who is the student who gives you that offensive comment? ")
+                user_issue_proof = input(
                     "Can you provide the link where the offensive comment is located? "
                 )
                 if user_issue_link.lower() == "yes" or user_issue_link.lower() == "y":
@@ -88,7 +80,8 @@ if proceed():
         print(f"user_course : {user_course}")
         print(f"Group number : {user_group_number}")
         print("user_unit" + " " + str(user_unit))
-        print(f"ASSIGNMENTS_SECTION {ASSIGNMENTS_SECTION[user_complaint_part]}")
+        print(
+            f"ASSIGNMENTS_SECTION {ASSIGNMENTS_SECTION[user_complaint_part]}")
         print(f"USER_ISSUE : {USER_ISSUES[user_issue]}")
         print(f"user_issue_more_details {user_issue_more_details}")
 
