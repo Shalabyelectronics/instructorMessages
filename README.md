@@ -37,6 +37,6 @@ Group number : [group number]
 * [user_issue_proof]
 * [user_issue_more_details]
 
-The output file will be a text file type, and it will be located in the student desktop folder.
+The output file will be a text file type, and it will be located in the letter_of_complaints folder.
 
 
