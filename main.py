@@ -1,8 +1,9 @@
 from complaint import Complaint
+from logo import logo
 import time
 
-print("Welcome to complaint center.\n")
-
+print("Welcome to complaint center.")
+print(logo)
 
 open_complaint = input("Do you want to create a complaint letter to your instructor?").lower()
 if open_complaint == "y" or open_complaint == "yes":
@@ -22,4 +23,5 @@ if open_complaint == "y" or open_complaint == "yes":
         print(create_complaint.proof_one)
     if create_complaint.proof_two is not None:
         print(create_complaint.proof_two)
-
+    with open("./letter_of_complaints/test_message.txt", mode="w" ) as test:
+            test.write("")
