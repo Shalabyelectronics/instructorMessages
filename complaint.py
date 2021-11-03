@@ -17,10 +17,12 @@ class Complaint():
         self.course_name = input("Which course are you currently doing? ").title()
         self.unit_number = input("Which unit is your complaint related to it? ")
         self.group_number = input("What is your group number?")
-        self.issue_section = "null"
+        self.issue_section = None
         self.complaint_part()
-        self.issue_details = "null"
+        self.issue_details = None
         self.more_details()
+        self.proof_one = None
+        self.proof_two = None
 
     def complaint_part(self):
         issue_part = input(
@@ -50,3 +52,30 @@ class Complaint():
             print("Please choose from A,B or C : ")
             return False
 
+    def proof_questions(self):
+        if self.issue_details == "unfairly graded":
+            self.proof_one = input(
+                "Would you please give more details why you think you unfairly graded?\n"
+            )
+            add_proof = input("Do you want to add another poof for unfairly graded issue?").lower()
+            if add_proof == "y" or add_proof == "yes":
+                self.proof_two = input(
+                    "Would you please give more details why you think you unfairly graded?\n"
+                )
+        elif self.issue_details == "Offensive comment":
+            self.proof_one = input(
+                "Who is the student who gives you that offensive comment? Please write his full name : \n"
+            ).title()
+            add_proof = input("Can you provide the link where the offensive comment is located? ?").lower()
+            if add_proof == "y" or add_proof == "yes":
+                self.proof_two = input(
+                    "Please paste the link here : \n"
+                )
+            else:
+                print("It will be much better if you got the link. So your instructor will take action for this "
+                      "student. ")
+        else:
+            self.issue_details = input("Would you please address what your complaint is?\n")
+            add_proof = input(f"Do you want to add another poof for {self.issue_details} ?").lower()
+            if add_proof == "y" or add_proof == "yes":
+                self.proof_one = input(f"What is your proof about {self.issue_details}")
