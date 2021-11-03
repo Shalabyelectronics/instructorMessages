@@ -14,7 +14,7 @@ class Complaint:
     def __init__(self):
         self.student_name = input("Write your first and last name, please : ").title()
         self.instructor_name = input("What is your instructor name : ").title()
-        self.course_name = input("Which course are you currently doing? ").title()
+        self.course_name = input("Which course are you currently doing? ").upper()
         self.unit_number = input("Which unit is your complaint related to it? ")
         self.group_number = input("What is your group number?")
         self.issue_section = None
@@ -55,7 +55,6 @@ class Complaint:
             self.proof_one = input(
                 "Would you please give more details why you think you unfairly graded?\n"
             )
-            print(self.proof_one)
             add_proof = input("Do you want to add another poof for unfairly graded issue?").lower()
             if add_proof == "y" or add_proof == "yes":
                 self.proof_two = input(
