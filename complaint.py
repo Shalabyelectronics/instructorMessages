@@ -20,9 +20,9 @@ class Complaint:
         self.issue_section = None
         self.complaint_part()
         self.issue_details = None
-        self.more_details()
         self.proof_one = None
         self.proof_two = None
+        self.more_details()
 
     def complaint_part(self):
         issue_part = input(
@@ -33,10 +33,9 @@ class Complaint:
         ).lower()
         if issue_part == "a" or issue_part == "b" or issue_part == "c":
             self.issue_section = ASSIGNMENTS_SECTION[issue_part]
-            return True
+
         else:
             print("Please choose from A,B or C : ")
-            return False
 
     def more_details(self):
         issue_point = input(
@@ -50,13 +49,13 @@ class Complaint:
             self.proof_questions()
         else:
             print("Please choose from A,B or C : ")
-            return False
 
     def proof_questions(self):
         if self.issue_details == "unfairly graded":
             self.proof_one = input(
                 "Would you please give more details why you think you unfairly graded?\n"
             )
+            print(self.proof_one)
             add_proof = input("Do you want to add another poof for unfairly graded issue?").lower()
             if add_proof == "y" or add_proof == "yes":
                 self.proof_two = input(
@@ -79,4 +78,3 @@ class Complaint:
             add_proof = input(f"Do you want to add another poof for {self.issue_details} ?").lower()
             if add_proof == "y" or add_proof == "yes":
                 self.proof_one = input(f"What is your proof about {self.issue_details}")
-
