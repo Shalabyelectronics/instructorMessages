@@ -5,12 +5,12 @@ import time
 print("Welcome to complaint center.")
 print(logo)
 
-open_complaint = input("Do you want to create a complaint letter to your instructor?").lower()
+open_complaint = input("Do you want to create a complaint letter to your instructor?\n"
+                       "Please type (y) or (n) : ").lower()
 if open_complaint == "y" or open_complaint == "yes":
     print("Ok, then let's create your profile first: ")
     create_complaint = Complaint()
     print("Please wait!!! creating your Complaint message")
-
 
     with open("./letter_of_complaints/test_message.txt", mode="w" ) as test:
             test.write(
@@ -30,6 +30,7 @@ if open_complaint == "y" or open_complaint == "yes":
                 f"{create_complaint.student_name}.\n"
                 f"Group number : {create_complaint.group_number}\n"
             )
-
+else:
+    print("Have a nice day.")
 
 
