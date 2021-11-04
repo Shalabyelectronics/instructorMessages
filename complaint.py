@@ -8,6 +8,7 @@ USER_ISSUES = {
     "b": "Offensive comment",
     "c": "Others"
 }
+MULTIPLES_CHOICES = ["a", "b", "c"]
 
 
 class Complaint:
@@ -25,30 +26,36 @@ class Complaint:
         self.more_details()
 
     def complaint_part(self):
-        issue_part = input(
-            "Which part do you want to complain about it?\n"
-            "A- Discussion forum\n"
-            "B- Written Assignment\n"
-            "C- Learning Journal\n"
-        ).lower()
-        if issue_part == "a" or issue_part == "b" or issue_part == "c":
-            self.issue_section = ASSIGNMENTS_SECTION[issue_part]
-
-        else:
-            print("Please choose from A,B or C : ")
+        is_right = True
+        while is_right:
+            issue_part = input(
+                "Which part do you want to complain about it?\n"
+                "A- Discussion forum\n"
+                "B- Written Assignment\n"
+                "C- Learning Journal\n"
+            ).lower()
+            if issue_part in MULTIPLES_CHOICES:
+                self.issue_section = ASSIGNMENTS_SECTION[issue_part]
+                print("It's working")
+                is_right = False
+            else:
+                print("Please choose from A,B or C : ")
 
     def more_details(self):
-        issue_point = input(
-            "Why do you want to complain?\n"
-            "A- unfairly graded\n"
-            "B-Offensive comment\n"
-            "C- Others\n"
-        ).lower()
-        if issue_point == "a" or issue_point == "b" or issue_point == "c":
-            self.issue_details = USER_ISSUES[issue_point]
-            self.proof_questions()
-        else:
-            print("Please choose from A,B or C : ")
+        is_right = True
+        while is_right:
+            issue_point = input(
+                "Why do you want to complain?\n"
+                "A- unfairly graded\n"
+                "B-Offensive comment\n"
+                "C- Others\n"
+            ).lower()
+            if issue_point in MULTIPLES_CHOICES:
+                self.issue_details = USER_ISSUES[issue_point]
+                self.proof_questions()
+                is_right = False
+            else:
+                print("Please choose from A,B or C : ")
 
     def proof_questions(self):
         if self.issue_details == "unfairly graded":
