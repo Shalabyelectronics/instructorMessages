@@ -38,5 +38,6 @@ Group number : [group number]
 * [user_issue_more_details]
 
 The output file will be a text file type, and it will be located in the letter_of_complaints folder.
+Also, student just can copy the message as in the end the program will read the final result.
 
 
