@@ -1,5 +1,5 @@
 from complaint import Complaint
-from logo import logo
+from logo import logo, line
 import time
 
 def create_complaint():
@@ -11,7 +11,6 @@ def create_complaint():
     if open_complaint == "y" or open_complaint == "yes":
         print("Ok, then let's create your profile first: ")
         create_complaint = Complaint()
-        print("Please wait!!! creating your Complaint message")
 
         with open("./letter_of_complaints/test_message.txt", mode="w" ) as test:
                 test.write(
@@ -32,6 +31,7 @@ def create_complaint():
                     f"Group number : {create_complaint.group_number}\n"
                 )
         print("Here you are just copy your complaint message.")
+        print(line)
         with open("./letter_of_complaints/test_message.txt") as test:
             contents = test.read()
             print(contents)
@@ -45,3 +45,4 @@ def create_complaint():
         print("Have a nice day.")
 
 
+create_complaint()

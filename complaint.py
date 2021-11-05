@@ -10,6 +10,18 @@ USER_ISSUES = {
 }
 MULTIPLES_CHOICES = ["a", "b", "c"]
 
+UNITES = {
+    1: "one",
+    2: "two",
+    3: "three",
+    4: "four",
+    5: "five",
+    6: "six",
+    7: "seven",
+    8: "eight",
+    9: "nine"
+}
+
 
 class Complaint:
     def __init__(self):
@@ -17,6 +29,7 @@ class Complaint:
         self.instructor_name = input("What is your instructor name : ").title()
         self.course_name = input("Which course are you currently doing? ").upper()
         self.unit_number = input("Which unit is your complaint related to it? ")
+        self.convert_unit_number()
         self.group_number = input("What is your group number?")
         self.issue_section = None
         self.complaint_part()
@@ -84,3 +97,7 @@ class Complaint:
             add_proof = input(f"Do you want to add another poof for {self.issue_details} ?").lower()
             if add_proof == "y" or add_proof == "yes":
                 self.proof_one = input(f"What is your proof about {self.issue_details}")
+
+    def convert_unit_number(self):
+        if int(self.unit_number) in UNITES:
+            self.unit_number = UNITES[int(self.unit_number)]
