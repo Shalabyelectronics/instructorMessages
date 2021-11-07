@@ -27,7 +27,6 @@ class Complaint:
     def __init__(self):
         self.unit_number = input("Which unit is your complaint related to it? ")
         self.convert_unit_number()
-        self.group_number = input("What is your group number?")
         self.issue_section = None
         self.complaint_part()
         self.issue_details = None
@@ -46,7 +45,6 @@ class Complaint:
             ).lower()
             if issue_part in MULTIPLES_CHOICES:
                 self.issue_section = ASSIGNMENTS_SECTION[issue_part]
-                print("It's working")
                 is_right = False
             else:
                 print("Please choose from A,B or C : ")

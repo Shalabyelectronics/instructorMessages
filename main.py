@@ -1,4 +1,5 @@
 from complaint import Complaint
+from profile import Profile
 from logo import logo, line
 import time
 
@@ -10,13 +11,15 @@ def create_complaint():
                            "Please type (y) or (n) : ").lower()
     if open_complaint == "y" or open_complaint == "yes":
         print("Ok, then let's create your profile first: ")
+        create_profile = Profile()
+        create_profile.create_profile()
         create_complaint = Complaint()
 
         with open("./letter_of_complaints/test_message.txt", mode="w" ) as test:
                 test.write(
-                    f"Hello instructor {create_complaint.instructor_name},\n"
+                    f"Hello instructor {create_profile.instructor_name},\n"
                     f"My {create_complaint.issue_section} for unit {create_complaint.unit_number} was "
-                    f"{create_complaint.issue_details}\n"
+                    f"{create_complaint.issue_details}.\n"
                 )
 
                 if create_complaint.proof_one is not None:
@@ -27,8 +30,8 @@ def create_complaint():
                 test.write(
                     f"I kindly request you check this case out.\n"
                     f"Best regards.\n"
-                    f"{create_complaint.student_name}.\n"
-                    f"Group number : {create_complaint.group_number}\n"
+                    f"{create_profile.student_name}.\n"
+                    f"Group number : {create_profile.group_number}\n"
                 )
         print("Here you are just copy your complaint message.")
         print(line)
