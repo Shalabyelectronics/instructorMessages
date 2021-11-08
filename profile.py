@@ -21,7 +21,7 @@ class Profile:
 
     def check_profile(self):
         self.student_name = input("Please, write your first and last name:  ").title()
-        students_data = pandas.read_csv("students_data.csv")
+        students_data = pandas.read_csv("students_data.csv", index_col=0)
         names = students_data["Name"].tolist()
         if self.student_name in names:
             print("We checked that you created a profile before")
