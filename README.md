@@ -37,6 +37,20 @@ Group number : [group number]
 * [user_issue_proof]
 * [user_issue_more_details]
 
+##Classes used for:
+I created two main classes so far Complaint class and Profile class.
+####Complaint class:
+I create Complaint class because I need to arrange my main.py file and to handle users input easier,
+as it contains all questions needed to create the complaint message, and I'm updating it frequently 
+to hold more questions to get much efficient and clear message.
+####Profile class:
+I create Profile class because I need to create one profile for each user, so I could save more time.
+The class has check profile method which check user profile from his name and if it finds the username 
+it will ask the user to check his details to be sure about it then use it for the complaint message.
+I used Pandas library to help me handle user data.
+
+##Output:
+
 The output file will be a text file type, and it will be located in the letter_of_complaints folder.
 Also, student just can copy the message as in the end the program will read the final result.
 
