@@ -1,26 +1,15 @@
 import pandas
-import pandas as pd
 
 
 class Profile:
     def __init__(self):
-        self.student_name = None
+        self.student_name = input("Please, write your first and last name:  ").title()
         self.instructor_name = None
         self.group_number = None
         self.course_name = None
-        self.check_profile()
+        self.create_check_profile()
 
-    def create_profile(self):
-        pass
-        # data["Name"] = []
-        # data["Instructor name"] = []
-        # data["Group number"] = []
-        # data["Course Name"] = []
-        # df = pd.DataFrame(data)
-        # df_csv = df.to_csv("students_data.csv")
-
-    def check_profile(self):
-        self.student_name = input("Please, write your first and last name:  ").title()
+    def create_check_profile(self):
         students_data = pandas.read_csv("students_data.csv", index_col=0)
         names = students_data["Name"].tolist()
         if self.student_name in names:
@@ -36,12 +25,9 @@ class Profile:
                     self.instructor_name = students_dictionary["Instructor name"][0]
                     self.group_number = students_dictionary["Group number"][0]
                     self.course_name = students_dictionary["Course Name"][0]
-
-
         else:
             self.instructor_name = input("What is your instructor name : ").title()
             self.group_number = input("What is your group number?")
             self.course_name = input("Which course are you currently doing? ").upper()
-            print("Did not match!!!")
-
-            # print("No")
+            create_profile = students_data.to_csv("students_data.csv", mode="a", header=False)
+            # I searching about a way to add entries to an existed csv file

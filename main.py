@@ -12,7 +12,6 @@ def create_complaint():
     if open_complaint == "y" or open_complaint == "yes":
         print("Ok, then let's create your profile first: ")
         create_profile = Profile()
-        create_profile.create_profile()
         create_complaint = Complaint()
 
         with open("./letter_of_complaints/test_message.txt", mode="w" ) as test:
