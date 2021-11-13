@@ -9,7 +9,8 @@ import smtplib, ssl
 class Sendmail:
     def __init__(self):
         self.subject = input("Type your subject title here and hit enter: ").lower()
-        self.body = None
+        self.content = self.read_complaint_message()
+        self.body = self.content
         self.sender_email = "complaintmessagegenerator@gmail.com"
         self.receiver_email = input("Type your instructor email and hit enter: ")
         self.password = input("Type your password and press enter:")
@@ -48,5 +49,8 @@ class Sendmail:
             server.login(self.sender_email, self.password)
             server.sendmail(self.sender_email, self.receiver_email, text)
 
+    def read_complaint_message(self):
+        with open("./letter_of_complaints/test_message.txt") as test:
+            contents = test.read()
 
 
