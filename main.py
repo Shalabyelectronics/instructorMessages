@@ -1,6 +1,7 @@
 from complaint import Complaint
 from profile import Profile
 from logo import logo, line
+from sendmail import Sendmail
 import time
 
 def create_complaint():
@@ -37,14 +38,17 @@ def create_complaint():
         with open("./letter_of_complaints/test_message.txt") as test:
             contents = test.read()
             print(contents)
-        another_message = input("Do you want to create another message?").lower()
-        if another_message == "y" or another_message == "yes":
-            create_complaint()
+        send_message = input("Do you want to send it to your instructor now? (yes or no)\n").lower()
+        if send_message == "y" or send_message == "yes":
+            pass
+            # sendemail = Sendmail()
+            # sendemail.subject
+            # sendemail.body = contents
+            # sendemail.receiver_email
+            # sendemail.password
+
         else:
             print("Have a nice day.")
 
     else:
         print("Have a nice day.")
-
-
-create_complaint()

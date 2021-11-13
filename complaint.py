@@ -69,7 +69,7 @@ class Complaint:
         if self.issue_details == "unfairly graded":
             self.proof_one = input(
                 "Would you please give more details why you think you unfairly graded?\n"
-                "Example - Mine peer-graded me with the low grades without any feedback."
+                "Example - Mine peer-graded me with the low grades without any feedback.\n"
             )
             add_proof = input("Do you want to add another poof for unfairly graded issue?").lower()
             if add_proof == "y" or add_proof == "yes":
