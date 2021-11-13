@@ -41,14 +41,12 @@ def create_complaint():
         send_message = input("Do you want to send it to your instructor now? (yes or no)\n").lower()
         if send_message == "y" or send_message == "yes":
             pass
-            # sendemail = Sendmail()
-            # sendemail.subject
-            # sendemail.body = contents
-            # sendemail.receiver_email
-            # sendemail.password
+            sendemail = Sendmail()
 
         else:
             print("Have a nice day.")
 
     else:
         print("Have a nice day.")
+
+create_complaint()
